@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SubmittedActivitiesViewController.swift
 //  KidsActivities
 //
 //  Created by Maitree Bain on 4/14/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SubmittedActivitiesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        view.backgroundColor = .green
     }
 
-
 }
-
