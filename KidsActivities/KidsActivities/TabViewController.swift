@@ -18,7 +18,8 @@ class TabViewController: UITabBarController {
     }()
     
     private lazy var submittedActivitiesController: SubmittedActivitiesViewController = {
-        let viewController = SubmittedActivitiesViewController()
+        let storyboard = UIStoryboard(name: "SubmittedStoryboard", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "SubmittedActivitiesViewController") as SubmittedActivitiesViewController
         viewController.tabBarItem = UITabBarItem(title: "Activities", image: UIImage(systemName: "star.fill"), tag: 1)
         return viewController
     }()
