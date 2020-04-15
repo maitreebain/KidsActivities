@@ -6,6 +6,7 @@ target 'KidsActivities' do
   use_frameworks!
 
   # Pods for KidsActivities
+  pod 'FirebaseAuth'
   pod 'Firebase/Firestore'
 
   target 'KidsActivitiesTests' do

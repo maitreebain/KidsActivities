@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class OptionsViewController: UIViewController {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,4 @@ class OptionsViewController: UIViewController {
         view.backgroundColor = .blue
     }
 
-
 }
-

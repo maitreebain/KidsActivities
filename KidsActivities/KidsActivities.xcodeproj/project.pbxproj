@@ -18,7 +18,7 @@
 		80CA690F24466A0A0097BB7D /* SubmittedActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA690E24466A0A0097BB7D /* SubmittedActivitiesViewController.swift */; };
 		80CA691124466C060097BB7D /* OptionsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CA691024466C060097BB7D /* OptionsStoryboard.storyboard */; };
 		80CA691324466C180097BB7D /* SubmittedStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CA691224466C180097BB7D /* SubmittedStoryboard.storyboard */; };
-		80D5B6FC244679CB00AA492D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D5B6FB244679CB00AA492D /* GoogleService-Info.plist */; };
+		80D5B6FF24468E0900AA492D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D5B6FE24468E0900AA492D /* GoogleService-Info.plist */; };
 		A3D6E7C86F4BA7CEF27853CD /* Pods_KidsActivities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D893B9D67FC1BD5F6AA955 /* Pods_KidsActivities.framework */; };
 		B732F484820E971BEBCCFACE /* Pods_KidsActivitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917AF7A5682482C425D140F7 /* Pods_KidsActivitiesTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +53,7 @@
 		80CA690E24466A0A0097BB7D /* SubmittedActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedActivitiesViewController.swift; sourceTree = "<group>"; };
 		80CA691024466C060097BB7D /* OptionsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OptionsStoryboard.storyboard; sourceTree = "<group>"; };
 		80CA691224466C180097BB7D /* SubmittedStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubmittedStoryboard.storyboard; sourceTree = "<group>"; };
-		80D5B6FB244679CB00AA492D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80D5B6FE24468E0900AA492D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		917AF7A5682482C425D140F7 /* Pods_KidsActivitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D893B9D67FC1BD5F6AA955 /* Pods_KidsActivities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,13 +119,13 @@
 				80CA68E5244661AC0097BB7D /* SceneDelegate.swift */,
 				80CA68E7244661AC0097BB7D /* OptionsViewController.swift */,
 				80CA690E24466A0A0097BB7D /* SubmittedActivitiesViewController.swift */,
-				80D5B6FB244679CB00AA492D /* GoogleService-Info.plist */,
 				80CA690C2446695B0097BB7D /* TabViewController.swift */,
 				80CA691024466C060097BB7D /* OptionsStoryboard.storyboard */,
 				80CA691224466C180097BB7D /* SubmittedStoryboard.storyboard */,
 				80CA68EF244661AF0097BB7D /* Assets.xcassets */,
 				80CA68F1244661AF0097BB7D /* LaunchScreen.storyboard */,
 				80CA68F4244661AF0097BB7D /* Info.plist */,
+				80D5B6FE24468E0900AA492D /* GoogleService-Info.plist */,
 				80CA68EC244661AC0097BB7D /* KidsActivities.xcdatamodeld */,
 			);
 			path = KidsActivities;
@@ -256,7 +256,7 @@
 			files = (
 				80CA68F3244661AF0097BB7D /* LaunchScreen.storyboard in Resources */,
 				80CA68F0244661AF0097BB7D /* Assets.xcassets in Resources */,
-				80D5B6FC244679CB00AA492D /* GoogleService-Info.plist in Resources */,
+				80D5B6FF24468E0900AA492D /* GoogleService-Info.plist in Resources */,
 				80CA691124466C060097BB7D /* OptionsStoryboard.storyboard in Resources */,
 				80CA691324466C180097BB7D /* SubmittedStoryboard.storyboard in Resources */,
 			);
@@ -505,7 +505,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MaitreeBain.KidsActivities;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Maitree.KidsActivities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -524,7 +524,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MaitreeBain.KidsActivities;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Maitree.KidsActivities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
