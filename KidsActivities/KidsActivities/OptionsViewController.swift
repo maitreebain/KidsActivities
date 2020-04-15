@@ -10,8 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class OptionsViewController: UIViewController {
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
