@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8020BCDB2446A8C9009FC0A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8020BCDA2446A8C9009FC0A9 /* ViewController.swift */; };
+		8020BCDB2446A8C9009FC0A9 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */; };
+		808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C23FE2447733D00C3EC8D /* LetterView.swift */; };
 		80CA68E4244661AC0097BB7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA68E3244661AC0097BB7D /* AppDelegate.swift */; };
 		80CA68E6244661AC0097BB7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA68E5244661AC0097BB7D /* SceneDelegate.swift */; };
 		80CA68E8244661AC0097BB7D /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA68E7244661AC0097BB7D /* OptionsViewController.swift */; };
@@ -39,9 +40,10 @@
 		3DF0B7F88367107B8409C9BB /* Pods-KidsActivities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivities.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivities/Pods-KidsActivities.debug.xcconfig"; sourceTree = "<group>"; };
 		540B73A2D483DBB1D0D30944 /* Pods-KidsActivitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivitiesTests.release.xcconfig"; path = "Target Support Files/Pods-KidsActivitiesTests/Pods-KidsActivitiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		5BC872B906A1A96F874BC454 /* Pods-KidsActivitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivitiesTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivitiesTests/Pods-KidsActivitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8020BCDA2446A8C9009FC0A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		8020BCDC2446A8CD009FC0A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8020BCDD2446A8CE009FC0A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		808C23FE2447733D00C3EC8D /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
 		80CA68E0244661AC0097BB7D /* KidsActivities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsActivities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CA68E3244661AC0097BB7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80CA68E5244661AC0097BB7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +149,8 @@
 		80D5B6F82446756200AA492D /* maitreeb */ = {
 			isa = PBXGroup;
 			children = (
-				8020BCDA2446A8C9009FC0A9 /* ViewController.swift */,
+				8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */,
+				808C23FE2447733D00C3EC8D /* LetterView.swift */,
 			);
 			path = maitreeb;
 			sourceTree = "<group>";
@@ -351,8 +354,9 @@
 				80CA68E4244661AC0097BB7D /* AppDelegate.swift in Sources */,
 				80CA68E6244661AC0097BB7D /* SceneDelegate.swift in Sources */,
 				80CA690D2446695B0097BB7D /* TabViewController.swift in Sources */,
-				8020BCDB2446A8C9009FC0A9 /* ViewController.swift in Sources */,
+				8020BCDB2446A8C9009FC0A9 /* LetterViewController.swift in Sources */,
 				80CA68EE244661AC0097BB7D /* KidsActivities.xcdatamodeld in Sources */,
+				808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */,
 				80CA690F24466A0A0097BB7D /* SubmittedActivitiesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
