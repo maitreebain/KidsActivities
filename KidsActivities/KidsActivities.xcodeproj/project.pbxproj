@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8020BCDB2446A8C9009FC0A9 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */; };
+		80398C9424490680001A0E4F /* ScavengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80398C9324490680001A0E4F /* ScavengerCell.swift */; };
 		808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C23FE2447733D00C3EC8D /* LetterView.swift */; };
 		80CA68E4244661AC0097BB7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA68E3244661AC0097BB7D /* AppDelegate.swift */; };
 		80CA68E6244661AC0097BB7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA68E5244661AC0097BB7D /* SceneDelegate.swift */; };
@@ -20,8 +21,8 @@
 		80CA690F24466A0A0097BB7D /* SubmittedActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA690E24466A0A0097BB7D /* SubmittedActivitiesViewController.swift */; };
 		80CA691124466C060097BB7D /* OptionsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CA691024466C060097BB7D /* OptionsStoryboard.storyboard */; };
 		80CA691324466C180097BB7D /* SubmittedStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CA691224466C180097BB7D /* SubmittedStoryboard.storyboard */; };
-		80CB497E2448C0C900E07A76 /* SubmittedActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB497D2448C0C800E07A76 /* SubmittedActivitiesViewController.swift */; };
-		80CB49802448C0D100E07A76 /* SubmittedStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CB497F2448C0D100E07A76 /* SubmittedStoryboard.storyboard */; };
+		80CB497E2448C0C900E07A76 /* ScavengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB497D2448C0C800E07A76 /* ScavengerViewController.swift */; };
+		80CB49802448C0D100E07A76 /* Scavenger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CB497F2448C0D100E07A76 /* Scavenger.storyboard */; };
 		80CB49822448C41500E07A76 /* ScavengerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB49812448C41500E07A76 /* ScavengerInfo.swift */; };
 		A3D6E7C86F4BA7CEF27853CD /* Pods_KidsActivities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D893B9D67FC1BD5F6AA955 /* Pods_KidsActivities.framework */; };
 		B732F484820E971BEBCCFACE /* Pods_KidsActivitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917AF7A5682482C425D140F7 /* Pods_KidsActivitiesTests.framework */; };
@@ -51,6 +52,7 @@
 		8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		8020BCDC2446A8CD009FC0A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8020BCDD2446A8CE009FC0A9 /* Activity1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity1ViewController.swift; sourceTree = "<group>"; };
+		80398C9324490680001A0E4F /* ScavengerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScavengerCell.swift; sourceTree = "<group>"; };
 		808C23FE2447733D00C3EC8D /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
 		80CA68E0244661AC0097BB7D /* KidsActivities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsActivities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CA68E3244661AC0097BB7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +69,8 @@
 		80CA690E24466A0A0097BB7D /* SubmittedActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedActivitiesViewController.swift; sourceTree = "<group>"; };
 		80CA691024466C060097BB7D /* OptionsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OptionsStoryboard.storyboard; sourceTree = "<group>"; };
 		80CA691224466C180097BB7D /* SubmittedStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SubmittedStoryboard.storyboard; sourceTree = "<group>"; };
-		80CB497D2448C0C800E07A76 /* SubmittedActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmittedActivitiesViewController.swift; sourceTree = "<group>"; };
-		80CB497F2448C0D100E07A76 /* SubmittedStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubmittedStoryboard.storyboard; sourceTree = "<group>"; };
+		80CB497D2448C0C800E07A76 /* ScavengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerViewController.swift; sourceTree = "<group>"; };
+		80CB497F2448C0D100E07A76 /* Scavenger.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Scavenger.storyboard; sourceTree = "<group>"; };
 		80CB49812448C41500E07A76 /* ScavengerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScavengerInfo.swift; sourceTree = "<group>"; };
 		917AF7A5682482C425D140F7 /* Pods_KidsActivitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D893B9D67FC1BD5F6AA955 /* Pods_KidsActivities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,9 +169,10 @@
 			children = (
 				8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */,
 				808C23FE2447733D00C3EC8D /* LetterView.swift */,
-				80CB497D2448C0C800E07A76 /* SubmittedActivitiesViewController.swift */,
+				80CB497D2448C0C800E07A76 /* ScavengerViewController.swift */,
 				80CB49812448C41500E07A76 /* ScavengerInfo.swift */,
-				80CB497F2448C0D100E07A76 /* SubmittedStoryboard.storyboard */,
+				80CB497F2448C0D100E07A76 /* Scavenger.storyboard */,
+				80398C9324490680001A0E4F /* ScavengerCell.swift */,
 			);
 			path = maitreeb;
 			sourceTree = "<group>";
@@ -295,7 +298,7 @@
 				80CA691124466C060097BB7D /* OptionsStoryboard.storyboard in Resources */,
 				F106A2ED2448970900FAB35F /* Activity6Storyboard.storyboard in Resources */,
 				80CA691324466C180097BB7D /* SubmittedStoryboard.storyboard in Resources */,
-				80CB49802448C0D100E07A76 /* SubmittedStoryboard.storyboard in Resources */,
+				80CB49802448C0D100E07A76 /* Scavenger.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,13 +386,14 @@
 				80CA68E6244661AC0097BB7D /* SceneDelegate.swift in Sources */,
 				80CA690D2446695B0097BB7D /* TabViewController.swift in Sources */,
 				8020BCDB2446A8C9009FC0A9 /* LetterViewController.swift in Sources */,
+				80398C9424490680001A0E4F /* ScavengerCell.swift in Sources */,
 				80CA68EE244661AC0097BB7D /* KidsActivities.xcdatamodeld in Sources */,
 				80CB49822448C41500E07A76 /* ScavengerInfo.swift in Sources */,
 				F106A2EB244896F300FAB35F /* Activity6ViewController.swift in Sources */,
 				808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */,
 				80CA690F24466A0A0097BB7D /* SubmittedActivitiesViewController.swift in Sources */,
 				F106A2EF24489FA100FAB35F /* PersonifiedItemCell.swift in Sources */,
-				80CB497E2448C0C900E07A76 /* SubmittedActivitiesViewController.swift in Sources */,
+				80CB497E2448C0C900E07A76 /* ScavengerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
