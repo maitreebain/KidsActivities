@@ -32,5 +32,8 @@ class OptionsViewController: UIViewController {
     }
     
     @IBAction func activity20(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Scavenger", bundle: nil)
+        let scavVC = storyboard.instantiateViewController(identifier: "ScavengerViewController") as ScavengerViewController
+        self.navigationController?.pushViewController(scavVC, animated: true)
     }
 }

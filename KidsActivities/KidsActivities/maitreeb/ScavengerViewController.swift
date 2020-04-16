@@ -55,7 +55,7 @@ class ScavengerViewController: UIViewController {
     
 }
 
-extension ScavViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize: CGSize = UIScreen.main.bounds.size
@@ -72,7 +72,7 @@ extension ScavViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scavengerCell", for: indexPath) as? CollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "scavengerCell", for: indexPath) as? ScavengerCell else {
             fatalError("could not downcast to scavCell")
         }
         
@@ -100,7 +100,7 @@ extension ScavViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
 }
 
-extension ScavViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ScavengerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String else  {
