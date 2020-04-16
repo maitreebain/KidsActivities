@@ -6,4 +6,10 @@
 //  Copyright © 2020 Maitree Bain. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct ScavengerInfo {
+    let title: String
+    let image: UIImage?
+}
+
