@@ -17,4 +17,20 @@ class OptionsViewController: UIViewController {
         view.backgroundColor = .blue
     }
 
+    @IBAction func activity1(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func activity6(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func activity10(_ sender: UIButton) {
+    }
+    
+    @IBAction func activity17(_ sender: UIButton) {
+    }
+    
+    @IBAction func activity20(_ sender: UIButton) {
+    }
 }
