@@ -22,18 +22,13 @@ class DrawVC: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // calls when touch is sensed
-        
         // get first touch
         if let firstTouch = touches.first {
             lastTouch = firstTouch.location(in: view)
             arrLines.append([lastTouch])
         }
     }
-    
-    public func undo() {
-       _ =  arrLines.popLast()
-    }
-    
+        
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         // users move , or finished moving
         
