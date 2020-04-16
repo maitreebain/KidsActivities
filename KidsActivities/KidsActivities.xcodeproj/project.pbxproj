@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52E19205244892F600739D1D /* DrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E19204244892F600739D1D /* DrawVC.swift */; };
+		52FA1BD52447EB70008788D5 /* Draw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FA1BD42447EB70008788D5 /* Draw.storyboard */; };
 		8020BCDB2446A8C9009FC0A9 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */; };
 		808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C23FE2447733D00C3EC8D /* LetterView.swift */; };
 		80CA68E4244661AC0097BB7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA68E3244661AC0097BB7D /* AppDelegate.swift */; };
@@ -38,10 +40,11 @@
 /* Begin PBXFileReference section */
 		3B538D9642208F1D38CD1D88 /* Pods-KidsActivities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivities.release.xcconfig"; path = "Target Support Files/Pods-KidsActivities/Pods-KidsActivities.release.xcconfig"; sourceTree = "<group>"; };
 		3DF0B7F88367107B8409C9BB /* Pods-KidsActivities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivities.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivities/Pods-KidsActivities.debug.xcconfig"; sourceTree = "<group>"; };
+		52E19204244892F600739D1D /* DrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawVC.swift; sourceTree = "<group>"; };
+		52FA1BD42447EB70008788D5 /* Draw.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Draw.storyboard; sourceTree = "<group>"; };
 		540B73A2D483DBB1D0D30944 /* Pods-KidsActivitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivitiesTests.release.xcconfig"; path = "Target Support Files/Pods-KidsActivitiesTests/Pods-KidsActivitiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		5BC872B906A1A96F874BC454 /* Pods-KidsActivitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivitiesTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivitiesTests/Pods-KidsActivitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
-		8020BCDC2446A8CD009FC0A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8020BCDD2446A8CE009FC0A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		808C23FE2447733D00C3EC8D /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
 		80CA68E0244661AC0097BB7D /* KidsActivities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsActivities.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +161,8 @@
 		80D5B6F92446758A00AA492D /* tseringl */ = {
 			isa = PBXGroup;
 			children = (
-				8020BCDC2446A8CD009FC0A9 /* ViewController.swift */,
+				52FA1BD42447EB70008788D5 /* Draw.storyboard */,
+				52E19204244892F600739D1D /* DrawVC.swift */,
 			);
 			path = tseringl;
 			sourceTree = "<group>";
@@ -266,6 +270,7 @@
 			files = (
 				80CA68F3244661AF0097BB7D /* LaunchScreen.storyboard in Resources */,
 				F106A2E72447936400FAB35F /* GoogleService-Info.plist in Resources */,
+				52FA1BD52447EB70008788D5 /* Draw.storyboard in Resources */,
 				80CA68F0244661AF0097BB7D /* Assets.xcassets in Resources */,
 				80CA691124466C060097BB7D /* OptionsStoryboard.storyboard in Resources */,
 				80CA691324466C180097BB7D /* SubmittedStoryboard.storyboard in Resources */,
@@ -357,6 +362,7 @@
 				8020BCDB2446A8C9009FC0A9 /* LetterViewController.swift in Sources */,
 				80CA68EE244661AC0097BB7D /* KidsActivities.xcdatamodeld in Sources */,
 				808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */,
+				52E19205244892F600739D1D /* DrawVC.swift in Sources */,
 				80CA690F24466A0A0097BB7D /* SubmittedActivitiesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
