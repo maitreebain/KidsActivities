@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8019E7862449C7CB0015E48E /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8019E7852449C7CB0015E48E /* LetterCell.swift */; };
 		8020BCDB2446A8C9009FC0A9 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */; };
 		80398C9424490680001A0E4F /* ScavengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80398C9324490680001A0E4F /* ScavengerCell.swift */; };
 		808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C23FE2447733D00C3EC8D /* LetterView.swift */; };
@@ -63,6 +64,7 @@
 		3DF0B7F88367107B8409C9BB /* Pods-KidsActivities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivities.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivities/Pods-KidsActivities.debug.xcconfig"; sourceTree = "<group>"; };
 		540B73A2D483DBB1D0D30944 /* Pods-KidsActivitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivitiesTests.release.xcconfig"; path = "Target Support Files/Pods-KidsActivitiesTests/Pods-KidsActivitiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		5BC872B906A1A96F874BC454 /* Pods-KidsActivitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivitiesTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivitiesTests/Pods-KidsActivitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8019E7852449C7CB0015E48E /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
 		8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		80398C9324490680001A0E4F /* ScavengerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScavengerCell.swift; sourceTree = "<group>"; };
 		808C23FE2447733D00C3EC8D /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		80D5B6F82446756200AA492D /* maitreeb */ = {
 			isa = PBXGroup;
 			children = (
+				8019E7852449C7CB0015E48E /* LetterCell.swift */,
 				8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */,
 				80F55808244922AE009B7BFB /* LetterObject.swift */,
 				808C23FE2447733D00C3EC8D /* LetterView.swift */,
@@ -426,6 +429,7 @@
 				80F5583924493EDB009B7BFB /* Activity1ViewController.swift in Sources */,
 				80F5582D24493D9F009B7BFB /* Data+ConvertToURL.swift in Sources */,
 				80CA68E4244661AC0097BB7D /* AppDelegate.swift in Sources */,
+				8019E7862449C7CB0015E48E /* LetterCell.swift in Sources */,
 				80CA68E6244661AC0097BB7D /* SceneDelegate.swift in Sources */,
 				80CA690D2446695B0097BB7D /* TabViewController.swift in Sources */,
 				80F5583524493E1A009B7BFB /* Activity1Cell.swift in Sources */,
