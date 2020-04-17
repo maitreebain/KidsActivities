@@ -14,6 +14,8 @@ class LetterViewController: UIViewController {
     
     private let letterView = View()
     
+    private var activityName = "Letter"
+    
     override func loadView() {
         view = letterView
     }
@@ -45,10 +47,13 @@ class LetterViewController: UIViewController {
         updateUI()
     }
     
+    
+    
     private func setUpNavItems() {
         navigationItem.title = "Scavenger Hunt"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "questionmark.circle"), style: .plain, target: self, action: #selector(promptButtonPressed))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "photo.on.rectangle"), style: .plain, target: self, action: #selector(photoLibraryPressed))
+         letterView.submitButton.addTarget(self, action: #selector(submitButtonPressed(_:)), for: .touchUpInside)
     }
     
     private func configureCollectionView() {
@@ -68,6 +73,15 @@ class LetterViewController: UIViewController {
         print("prompt")
     }
     
+    @objc private func submitButtonPressed(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Empty Fields", message: "Please enter some text", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(cancelAction)
+        if letterView.letterTextView.text == "" {
+            present(alertController, animated: true)
+        }
+    }
+    
     @objc private func photoLibraryPressed(){
         //turn this into an action sheet
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -85,7 +99,7 @@ class LetterViewController: UIViewController {
     }
     
     private func fetchMediaObjects() {
-        letters = CoreDataManager.shared.fetchMediaObjects()
+        letters = CoreDataManager.shared.fetchMediaObjects().filter { $0.activityName == activityName}
     }
     
 }
@@ -112,20 +126,19 @@ extension LetterViewController: UICollectionViewDelegateFlowLayout, UICollection
         }
         let letter = letters[indexPath.row]
         cell.configureCell(letter)
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //move this to when image is interactable
-//        let playerController = AVPlayerViewController()
-//        let letter = letters[indexPath.row]
-//        guard let videoURL = letter.videoData?.convertToURL() else { return}
-//        let player = AVPlayer(url: videoURL)
-//        playerController.player = player
-//        present(playerController, animated: true) {
-//            player.play()
-//        }
+        //        let playerController = AVPlayerViewController()
+        //        let letter = letters[indexPath.row]
+        //        guard let videoURL = letter.videoData?.convertToURL() else { return}
+        //        let player = AVPlayer(url: videoURL)
+        //        playerController.player = player
+        //        present(playerController, animated: true) {
+        //            player.play()
+        //        }
         index = indexPath.row
         if let image = letters[index].imageData {
             letterView.letterImageView.image = UIImage(data: image)
@@ -138,6 +151,7 @@ extension LetterViewController: UICollectionViewDelegateFlowLayout, UICollection
 extension LetterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         guard let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String else  {
             return
         }
@@ -145,7 +159,8 @@ extension LetterViewController: UIImagePickerControllerDelegate, UINavigationCon
         switch mediaType {
         case "public.image":
             if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let imageData = originalImage.jpegData(compressionQuality: 1.0){
-                let mediaObject = CoreDataManager.shared.create(imageData, videoURL: nil)
+                guard let text = letterView.letterTextView.text else { return }
+                let mediaObject = CoreDataManager.shared.create(imageData, videoURL: nil, personifedItem: nil, activityName: activityName, caption: text)
                 letters.append(mediaObject)
                 print("saved image")
             }
@@ -154,20 +169,21 @@ extension LetterViewController: UIImagePickerControllerDelegate, UINavigationCon
                 let image = mediaURL.videoPreviewThumbnail(),
                 let imageData = image.jpegData(compressionQuality: 1.0)
             {
-                let mediaObject = CoreDataManager.shared.create(imageData, videoURL: mediaURL)
+                guard let text = letterView.letterTextView.text else { return }
+                let mediaObject = CoreDataManager.shared.create(imageData, videoURL: mediaURL, personifedItem: nil, activityName: activityName, caption: text)
                 letters.append(mediaObject)
-                 print("saved video")
+                print("saved video: \(text)")
             }
         default:
             print("unsupported media type")
         }
-        print(mediaType)
         
+        
+        print(mediaType)
         dismiss(animated: true)
     }
     
 }
-
 extension LetterViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == "Type your letter here" {

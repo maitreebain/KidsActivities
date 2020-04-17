@@ -28,20 +28,20 @@ class Activity1ViewController: UIViewController {
         return pickerController
     }()
     
-    private var activities = [Activity](){
+    private var activities = [ActivityData](){
         didSet{
             collectionView.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         configureCollectionView()
+        descLabel.isHidden = true
+        instrLabel.isHidden = true
         isCamDisabled()
-        let createdAct = Activity(activityName: "Blur", personifiedObject: nil, imageData: nil, videoData: nil, videoURL: nil)
-        activities.append(createdAct)
     }
+    
     
     func isCamDisabled(){
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -60,12 +60,6 @@ class Activity1ViewController: UIViewController {
         present(imagePickerController, animated: true)
         
     }
-    
-    @IBAction func buttonPressed(_ sender: UIButton){
-        
-    }
-
-
 }
 
 extension Activity1ViewController : UICollectionViewDataSource{
@@ -75,8 +69,8 @@ extension Activity1ViewController : UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activity1Cell", for: indexPath) as? Activity1Cell else {
-          fatalError("could not dequeue a MediaCell")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activity1Cell", for: indexPath) as? Activity1Cell else {
+            fatalError("could not dequeue a MediaCell")
         }
         let activity = activities[indexPath.row]
         cell.configureCell(for: activity)
@@ -88,39 +82,35 @@ extension Activity1ViewController : UICollectionViewDataSource{
 }
 
 extension Activity1ViewController: CollectionViewCellDelegate{
-    func textFieldChanged(cell: Activity1Cell, activity: Activity, text: String) {
-        var unModifiedActivity = activities.first{$0 == activity}
+    func textFieldChanged(cell: Activity1Cell, activity: ActivityData, text: String) {
         
-        unModifiedActivity?.personifiedObject = text
+        let unModifiedActivity = activities.first{$0 == activity}
+        
+        unModifiedActivity?.personifiedItem = text
     }
 }
 
 extension Activity1ViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      let maxSize: CGSize = UIScreen.main.bounds.size // max width and height of the current device
+        let maxSize: CGSize = UIScreen.main.bounds.size // max width and height of the current device
         let itemWidth: CGFloat = maxSize.width * 0.9
-      let itemHeight: CGFloat = maxSize.height * 0.40 // 40% of the height of the device
-      return CGSize(width: itemWidth, height: itemHeight)
+        let itemHeight: CGFloat = maxSize.height * 0.40 // 40% of the height of the device
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//      return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-//    }
 }
 
 extension Activity1ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let imageData = image.jpegData(compressionQuality: 1.0) else {
-          return
+            return
         }
         
-        
-        let createdActivity = Activity(activityName: "Personify Something", personifiedObject: nil, imageData: imageData, videoData: nil, videoURL: nil)
-        
-        activities.append(createdActivity)
-
+        let activity = CoreDataManager.shared.create(imageData, videoURL: nil, personifedItem: nil, activityName: "Personify Something", caption: nil)
+                
+        activities.append(activity)
         
         picker.dismiss(animated: true)
-      }
+    }
 }

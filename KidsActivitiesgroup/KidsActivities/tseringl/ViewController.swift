@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         return pickerController
     }()
     
+    private var mediaObjects = [ActivityData]()
+    
     override func loadView() {
         self.view = canvas
     }
@@ -32,6 +34,13 @@ class ViewController: UIViewController {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
             cameraButton.isEnabled = false
         }
+        
+        fetchMediaObjects()
+        dump(mediaObjects)
+    }
+    
+    private func fetchMediaObjects() {
+        mediaObjects = CoreDataManager.shared.fetchMediaObjects()
     }
     
     func takeScreenshot(view: UIView) -> UIImageView {
@@ -71,7 +80,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func screenshotPressed(_ sender: UIBarButtonItem) {
-       _ =  takeScreenshot(view: canvas)
+       let screenShot = takeScreenshot(view: canvas)
+        
+        guard let imageData = screenShot.image?.jpegData(compressionQuality: 1.0) else {
+            return
+        }
+        
+        let mediaObject = CoreDataManager.shared.create(imageData, videoURL: nil, personifedItem: nil, activityName: nil, caption: nil)
+        mediaObjects.append(mediaObject)
+        
+        showAlert(title: "Success", message: "Screenshot taken")
     }
     
 }
@@ -83,7 +101,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
-        
+                
         let newImage = resizeImage(image: image, newWidth: canvas.frame.width)
         
         canvas.backgroundColor = UIColor(patternImage: newImage)

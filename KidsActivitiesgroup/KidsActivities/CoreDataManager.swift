@@ -18,9 +18,9 @@ class CoreDataManager {
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func create(_ imageData: Data, videoURL: URL?) -> ActivityData {
+      func create(_ imageData: Data, videoURL: URL?, personifedItem: String?, activityName: String?, caption: String?) -> ActivityData {
         let mediaObject = ActivityData(entity: ActivityData.entity(), insertInto: context)
-        mediaObject.id = UUID().uuidString
+        mediaObject.id = UUID().uuidString 
         mediaObject.imageData = imageData
         if let videoURL = videoURL {
             do{

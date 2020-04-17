@@ -20,7 +20,6 @@ class View: UIView {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.backgroundColor = #colorLiteral(red: 0.152980417, green: 0.8163639903, blue: 0.8561428189, alpha: 1)
-        cv.contentMode = .scaleAspectFill
         return cv
     }()
     

@@ -28,7 +28,7 @@ class Activity6ViewController: UIViewController {
         return pickerController
     }()
     
-    private var activities = [Activity](){
+    private var activities = [ActivityData](){
         didSet{
             collectionView.reloadData()
         }
@@ -37,9 +37,9 @@ class Activity6ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        descLabel.isHidden = true
+        instruLabel.isHidden = true
         isCamDisabled()
-        let createdAct = Activity(activityName: "Blur", personifiedObject: nil, imageData: nil, videoData: nil, videoURL: nil)
-        activities.append(createdAct)
     }
     
     @IBAction func camButton(_ sender: UIBarButtonItem) {
@@ -48,6 +48,7 @@ class Activity6ViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
+        
     }
     
     func isCamDisabled(){
@@ -62,7 +63,6 @@ class Activity6ViewController: UIViewController {
     }
     
     private func playRandomVideo(in view: UIView){
-
         
         let videoURLs = activities.compactMap{$0.videoData}
         
@@ -83,36 +83,34 @@ class Activity6ViewController: UIViewController {
             player.play()
         }
     }
-    
-
 }
 
 extension Activity6ViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      let maxSize: CGSize = UIScreen.main.bounds.size
+        let maxSize: CGSize = UIScreen.main.bounds.size
         let itemWidth: CGFloat = maxSize.width * 0.9
-      let itemHeight: CGFloat = maxSize.height * 0.40
-      return CGSize(width: itemWidth, height: itemHeight)
+        let itemHeight: CGFloat = maxSize.height * 0.40
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      let activity = activities[indexPath.row]
-      guard let videoURL = activity.videoData?.convertToURL() else {
-        return
-      }
-      let playerViewController = AVPlayerViewController()
-      let player = AVPlayer(url: videoURL)
-      playerViewController.player = player
-      present(playerViewController, animated: true) {
-        // play video automatically
-        player.play()
-      }
+        let activity = activities[indexPath.row]
+        guard let videoURL = activity.videoData?.convertToURL() else {
+            return
+        }
+        let playerViewController = AVPlayerViewController()
+        let player = AVPlayer(url: videoURL)
+        playerViewController.player = player
+        present(playerViewController, animated: true) {
+            // play video automatically
+            player.play()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-      
-      return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height * 0.40)
+        
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height * 0.40)
     }
 }
 
@@ -124,7 +122,7 @@ extension Activity6ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activity6Cell", for: indexPath) as? Activity6Cell else {
-          fatalError("could not dequeue a MediaCell")
+            fatalError("could not dequeue a MediaCell")
         }
         let activity = activities[indexPath.row]
         cell.configureCell(for: activity)
@@ -132,12 +130,12 @@ extension Activity6ViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-      
-      guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "activity6CellVideo", for: indexPath) as? HeaderView else {
-        fatalError("could not dequeue a HeaderView")
-      }
-      playRandomVideo(in: headerView)
-      return headerView // is of the UICollectionReusableView
+        
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "activity6CellVideo", for: indexPath) as? HeaderView else {
+            fatalError("could not dequeue a HeaderView")
+        }
+        playRandomVideo(in: headerView)
+        return headerView // is of the UICollectionReusableView
     }
 }
 
@@ -145,27 +143,38 @@ extension Activity6ViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String else {
-              return
-            }
-            
-            switch mediaType {
-            case "public.image":
-              if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage,
+            return
+        }
+        
+        switch mediaType {
+        case "public.image":
+            if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage,
                 let imageData = originalImage.jpegData(compressionQuality: 1.0){
                 
-                let activity = Activity(activityName: "Color Slow-Mo", personifiedObject: nil, imageData: imageData, videoData: nil, videoURL: nil)
-                activities.append(activity)
-              }
-            case "public.movie":
-                if let mediaURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL, let image = mediaURL.videoPreviewThumbnail(), let imageData = image.jpegData(compressionQuality: 1.0) {
-                print("mediaURL: \(mediaURL)")
-                    let activity = Activity(activityName: "Color Slow-Mo", personifiedObject: nil, imageData: imageData, videoData: nil, videoURL: mediaURL)
-                activities.append(activity)
-              }
-            default:
-              print("unsupported media type")
+                
+                let mediaObject = CoreDataManager.shared.create(imageData, videoURL: nil, personifedItem: nil, activityName: "Slow-Mo Capture", caption: nil)
+                activities.append(mediaObject)
             }
-            
-            picker.dismiss(animated: true)
+        case "public.movie":
+            if let mediaURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL, let image = mediaURL.videoPreviewThumbnail(), let imageData = image.jpegData(compressionQuality: 1.0) {
+                print("mediaURL: \(mediaURL)")
+                let mediaObject = CoreDataManager.shared.create(imageData, videoURL: mediaURL, personifedItem: nil, activityName: "Slow-Mo Capture", caption: nil)
+                activities.append(mediaObject)
+            }
+        default:
+            print("unsupported media type")
+        }
+        
+        picker.dismiss(animated: true)
     }
 }
+
+
+
+
+
+
+
+
+
+

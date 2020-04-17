@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8019E7862449C7CB0015E48E /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8019E7852449C7CB0015E48E /* LetterCell.swift */; };
+		5226F6C4244945740005B468 /* Activity1Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5226F6C2244945740005B468 /* Activity1Storyboard.storyboard */; };
+		5226F6C5244945740005B468 /* Activity1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5226F6C3244945740005B468 /* Activity1ViewController.swift */; };
+		52AAB087244A0194005D56C6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AAB086244A0194005D56C6 /* Alert.swift */; };
+		52AAB089244A06F6005D56C6 /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AAB088244A06F6005D56C6 /* LetterCell.swift */; };
+		52AAB08B244A08AE005D56C6 /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AAB08A244A08AE005D56C6 /* MediaCell.swift */; };
 		8020BCDB2446A8C9009FC0A9 /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */; };
 		80398C9424490680001A0E4F /* ScavengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80398C9324490680001A0E4F /* ScavengerCell.swift */; };
 		808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808C23FE2447733D00C3EC8D /* LetterView.swift */; };
@@ -42,8 +46,6 @@
 		80F5583224493D9F009B7BFB /* Activity6Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F5582A24493D9F009B7BFB /* Activity6Storyboard.storyboard */; };
 		80F5583324493D9F009B7BFB /* Date+ConvertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5582B24493D9F009B7BFB /* Date+ConvertToString.swift */; };
 		80F5583524493E1A009B7BFB /* Activity1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5583424493E1A009B7BFB /* Activity1Cell.swift */; };
-		80F5583824493EDB009B7BFB /* Activity1Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F5583624493EDB009B7BFB /* Activity1Storyboard.storyboard */; };
-		80F5583924493EDB009B7BFB /* Activity1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5583724493EDB009B7BFB /* Activity1ViewController.swift */; };
 		A3D6E7C86F4BA7CEF27853CD /* Pods_KidsActivities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D893B9D67FC1BD5F6AA955 /* Pods_KidsActivities.framework */; };
 		B732F484820E971BEBCCFACE /* Pods_KidsActivitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917AF7A5682482C425D140F7 /* Pods_KidsActivitiesTests.framework */; };
 		F106A2E72447936400FAB35F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F106A2E62447936400FAB35F /* GoogleService-Info.plist */; };
@@ -62,9 +64,13 @@
 /* Begin PBXFileReference section */
 		3B538D9642208F1D38CD1D88 /* Pods-KidsActivities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivities.release.xcconfig"; path = "Target Support Files/Pods-KidsActivities/Pods-KidsActivities.release.xcconfig"; sourceTree = "<group>"; };
 		3DF0B7F88367107B8409C9BB /* Pods-KidsActivities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivities.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivities/Pods-KidsActivities.debug.xcconfig"; sourceTree = "<group>"; };
+		5226F6C2244945740005B468 /* Activity1Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity1Storyboard.storyboard; sourceTree = "<group>"; };
+		5226F6C3244945740005B468 /* Activity1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity1ViewController.swift; sourceTree = "<group>"; };
+		52AAB086244A0194005D56C6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		52AAB088244A06F6005D56C6 /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
+		52AAB08A244A08AE005D56C6 /* MediaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		540B73A2D483DBB1D0D30944 /* Pods-KidsActivitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivitiesTests.release.xcconfig"; path = "Target Support Files/Pods-KidsActivitiesTests/Pods-KidsActivitiesTests.release.xcconfig"; sourceTree = "<group>"; };
 		5BC872B906A1A96F874BC454 /* Pods-KidsActivitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivitiesTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivitiesTests/Pods-KidsActivitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8019E7852449C7CB0015E48E /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
 		8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		80398C9324490680001A0E4F /* ScavengerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScavengerCell.swift; sourceTree = "<group>"; };
 		808C23FE2447733D00C3EC8D /* LetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterView.swift; sourceTree = "<group>"; };
@@ -103,8 +109,6 @@
 		80F5582A24493D9F009B7BFB /* Activity6Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity6Storyboard.storyboard; sourceTree = "<group>"; };
 		80F5582B24493D9F009B7BFB /* Date+ConvertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+ConvertToString.swift"; sourceTree = "<group>"; };
 		80F5583424493E1A009B7BFB /* Activity1Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity1Cell.swift; sourceTree = "<group>"; };
-		80F5583624493EDB009B7BFB /* Activity1Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Activity1Storyboard.storyboard; path = "../../../../../Downloads/Archive (1)/Activity1Storyboard.storyboard"; sourceTree = "<group>"; };
-		80F5583724493EDB009B7BFB /* Activity1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity1ViewController.swift; path = "../../../../../Downloads/Archive (1)/Activity1ViewController.swift"; sourceTree = "<group>"; };
 		917AF7A5682482C425D140F7 /* Pods_KidsActivitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D893B9D67FC1BD5F6AA955 /* Pods_KidsActivities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F106A2E62447936400FAB35F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				80CA68E5244661AC0097BB7D /* SceneDelegate.swift */,
 				80CA68E7244661AC0097BB7D /* OptionsViewController.swift */,
 				80CA690E24466A0A0097BB7D /* SubmittedActivitiesViewController.swift */,
+				52AAB08A244A08AE005D56C6 /* MediaCell.swift */,
 				80CA690C2446695B0097BB7D /* TabViewController.swift */,
 				80CA691024466C060097BB7D /* OptionsStoryboard.storyboard */,
 				80CA691224466C180097BB7D /* SubmittedStoryboard.storyboard */,
@@ -198,7 +203,6 @@
 		80D5B6F82446756200AA492D /* maitreeb */ = {
 			isa = PBXGroup;
 			children = (
-				8019E7852449C7CB0015E48E /* LetterCell.swift */,
 				8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */,
 				80F55808244922AE009B7BFB /* LetterObject.swift */,
 				808C23FE2447733D00C3EC8D /* LetterView.swift */,
@@ -206,6 +210,7 @@
 				80CB49812448C41500E07A76 /* ScavengerInfo.swift */,
 				80CB497F2448C0D100E07A76 /* Scavenger.storyboard */,
 				80398C9324490680001A0E4F /* ScavengerCell.swift */,
+				52AAB088244A06F6005D56C6 /* LetterCell.swift */,
 			);
 			path = maitreeb;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 		80D5B6F92446758A00AA492D /* tseringl */ = {
 			isa = PBXGroup;
 			children = (
+				52AAB086244A0194005D56C6 /* Alert.swift */,
 				80F5580E244937D1009B7BFB /* CanvasView.swift */,
 				80F5580D244937D0009B7BFB /* RandomColor.swift */,
 				80F5580C244937D0009B7BFB /* ViewController.swift */,
@@ -224,8 +230,8 @@
 		80D5B6FA2446759D00AA492D /* bienbenido */ = {
 			isa = PBXGroup;
 			children = (
-				80F5583624493EDB009B7BFB /* Activity1Storyboard.storyboard */,
-				80F5583724493EDB009B7BFB /* Activity1ViewController.swift */,
+				5226F6C2244945740005B468 /* Activity1Storyboard.storyboard */,
+				5226F6C3244945740005B468 /* Activity1ViewController.swift */,
 				80F5582424493D9E009B7BFB /* Activity6Cell.swift */,
 				80F5582A24493D9F009B7BFB /* Activity6Storyboard.storyboard */,
 				80F5582924493D9F009B7BFB /* Activity6ViewController.swift */,
@@ -335,7 +341,7 @@
 				80CA68F3244661AF0097BB7D /* LaunchScreen.storyboard in Resources */,
 				80F55813244937DE009B7BFB /* Storyboard.storyboard in Resources */,
 				F106A2E72447936400FAB35F /* GoogleService-Info.plist in Resources */,
-				80F5583824493EDB009B7BFB /* Activity1Storyboard.storyboard in Resources */,
+				5226F6C4244945740005B468 /* Activity1Storyboard.storyboard in Resources */,
 				80F5583224493D9F009B7BFB /* Activity6Storyboard.storyboard in Resources */,
 				80CA68F0244661AF0097BB7D /* Assets.xcassets in Resources */,
 				80CA691124466C060097BB7D /* OptionsStoryboard.storyboard in Resources */,
@@ -426,10 +432,10 @@
 				80CA68E8244661AC0097BB7D /* OptionsViewController.swift in Sources */,
 				80F5583324493D9F009B7BFB /* Date+ConvertToString.swift in Sources */,
 				80F55809244922AE009B7BFB /* LetterObject.swift in Sources */,
-				80F5583924493EDB009B7BFB /* Activity1ViewController.swift in Sources */,
+				5226F6C5244945740005B468 /* Activity1ViewController.swift in Sources */,
 				80F5582D24493D9F009B7BFB /* Data+ConvertToURL.swift in Sources */,
+				52AAB087244A0194005D56C6 /* Alert.swift in Sources */,
 				80CA68E4244661AC0097BB7D /* AppDelegate.swift in Sources */,
-				8019E7862449C7CB0015E48E /* LetterCell.swift in Sources */,
 				80CA68E6244661AC0097BB7D /* SceneDelegate.swift in Sources */,
 				80CA690D2446695B0097BB7D /* TabViewController.swift in Sources */,
 				80F5583524493E1A009B7BFB /* Activity1Cell.swift in Sources */,
@@ -440,9 +446,11 @@
 				80F55811244937D1009B7BFB /* CanvasView.swift in Sources */,
 				80F55810244937D1009B7BFB /* RandomColor.swift in Sources */,
 				80CA68EE244661AC0097BB7D /* KidsActivities.xcdatamodeld in Sources */,
+				52AAB089244A06F6005D56C6 /* LetterCell.swift in Sources */,
 				80CB49822448C41500E07A76 /* ScavengerInfo.swift in Sources */,
 				80F5581D24493C17009B7BFB /* CoreDataManager.swift in Sources */,
 				808C23FF2447733D00C3EC8D /* LetterView.swift in Sources */,
+				52AAB08B244A08AE005D56C6 /* MediaCell.swift in Sources */,
 				80F5582C24493D9F009B7BFB /* Activity6Cell.swift in Sources */,
 				80CA690F24466A0A0097BB7D /* SubmittedActivitiesViewController.swift in Sources */,
 				80F5581A24493B6B009B7BFB /* ActivityData+CoreDataClass.swift in Sources */,
@@ -603,7 +611,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P547T297G7;
+				DEVELOPMENT_TEAM = 83DYP84L8W;
 				INFOPLIST_FILE = KidsActivities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,7 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P547T297G7;
+				DEVELOPMENT_TEAM = 83DYP84L8W;
 				INFOPLIST_FILE = KidsActivities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

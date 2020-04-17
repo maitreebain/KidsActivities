@@ -11,7 +11,7 @@
         <!--Personify Something-->
         <scene sceneID="VKP-lU-ZtE">
             <objects>
-                <viewController id="8bR-PK-l33" customClass="Activity1ViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Activity1ViewController" id="8bR-PK-l33" customClass="Activity1ViewController" customModule="KidsActivities" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Rb-6e-awK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="activity1Cell" id="GtS-jD-9gq" customClass="Activity1Cell" customModule="Test" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="activity1Cell" id="GtS-jD-9gq" customClass="Activity1Cell" customModule="KidsActivities" customModuleProvider="target">
                                         <rect key="frame" x="3" y="0.0" width="368" height="256"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LAO-Or-a8S">
@@ -84,26 +84,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1G2-dh-R1i">
-                                <rect key="frame" x="20" y="567.5" width="374" height="30"/>
-                                <state key="normal" title="Submit Activity"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="8bR-PK-l33" eventType="touchUpInside" id="8nO-js-GWu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fcL-VW-H7I" firstAttribute="trailing" secondItem="ZES-Fa-hcI" secondAttribute="trailing" constant="20" id="0ZZ-fm-xrb"/>
                             <constraint firstItem="ZES-Fa-hcI" firstAttribute="height" secondItem="5Rb-6e-awK" secondAttribute="height" multiplier="0.4" id="3Gp-KH-0zh"/>
-                            <constraint firstItem="1G2-dh-R1i" firstAttribute="top" secondItem="ZES-Fa-hcI" secondAttribute="bottom" constant="20" id="48K-ih-Awu"/>
                             <constraint firstItem="lsV-VS-yfu" firstAttribute="leading" secondItem="fcL-VW-H7I" secondAttribute="leading" constant="20" id="5MK-0T-Xtj"/>
                             <constraint firstItem="B6Y-Ef-Wrk" firstAttribute="leading" secondItem="fcL-VW-H7I" secondAttribute="leading" constant="20" id="OVV-jl-gS6"/>
                             <constraint firstItem="lsV-VS-yfu" firstAttribute="top" secondItem="B6Y-Ef-Wrk" secondAttribute="bottom" constant="20" id="R2r-aR-XuK"/>
                             <constraint firstItem="B6Y-Ef-Wrk" firstAttribute="top" secondItem="fcL-VW-H7I" secondAttribute="top" constant="20" id="Sp2-20-Gac"/>
                             <constraint firstItem="fcL-VW-H7I" firstAttribute="trailing" secondItem="B6Y-Ef-Wrk" secondAttribute="trailing" constant="20" id="fTt-DQ-qmE"/>
-                            <constraint firstItem="fcL-VW-H7I" firstAttribute="trailing" secondItem="1G2-dh-R1i" secondAttribute="trailing" constant="20" id="hBM-vm-JZV"/>
-                            <constraint firstItem="1G2-dh-R1i" firstAttribute="leading" secondItem="fcL-VW-H7I" secondAttribute="leading" constant="20" id="oXC-8s-A1G"/>
                             <constraint firstItem="fcL-VW-H7I" firstAttribute="trailing" secondItem="lsV-VS-yfu" secondAttribute="trailing" constant="20" id="rC7-QK-ocx"/>
                             <constraint firstItem="ZES-Fa-hcI" firstAttribute="leading" secondItem="fcL-VW-H7I" secondAttribute="leading" constant="20" id="uxJ-9a-BaV"/>
                             <constraint firstItem="ZES-Fa-hcI" firstAttribute="top" secondItem="lsV-VS-yfu" secondAttribute="bottom" constant="20" id="zkn-zb-ME8"/>
