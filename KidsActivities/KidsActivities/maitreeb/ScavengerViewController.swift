@@ -24,20 +24,27 @@ class ScavengerViewController: UIViewController {
     
     private var scavInfo = scavengerItems {
         didSet{
-            scavengerCollection.reloadData()
+            DispatchQueue.main.async {
+                self.scavengerCollection.reloadData()
+            }
+            print(scavInfo)
         }
     }
     
     private var selectedImage: UIImage? {
         didSet{
-            addNewUserImage()
+            DispatchQueue.main.async {
+                self.addNewUserImage()
+            }
         }
     }
     private var currentItem: ScavengerInfo?
+    private var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(scavInfo)
         setUpCollectionView()
         setUpNavItems()
     }
@@ -74,8 +81,11 @@ class ScavengerViewController: UIViewController {
         
         let huntItem = ScavengerInfo(title: currentItem?.title ?? "title empty", image: image)
         //add item into struct
+        
+        scavInfo[index] = huntItem
+        print(scavInfo)
+        scavengerCollection.reloadData()
     }
-    
     
 }
 
@@ -101,7 +111,6 @@ extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollect
         }
         
         let huntItem = scavengerItems[indexPath.row]
-        currentItem = huntItem
         if cell.image != huntItem.image {
             cell.checkButton.isEnabled = true
         } else {
@@ -116,6 +125,8 @@ extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             imagePickerController.sourceType = .photoLibrary
             present(imagePickerController, animated: true)
+        currentItem = scavengerItems[indexPath.row]
+        index = indexPath.row
     }
 }
 
