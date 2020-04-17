@@ -18,14 +18,23 @@ class OptionsViewController: UIViewController {
     }
 
     @IBAction func activity1(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Activity1Storyboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "Activity1ViewController") as Activity1ViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
     @IBAction func activity6(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Activity6Storyboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "Activity6ViewController") as Activity6ViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
     @IBAction func activity10(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ViewController") as ViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func activity17(_ sender: UIButton) {
