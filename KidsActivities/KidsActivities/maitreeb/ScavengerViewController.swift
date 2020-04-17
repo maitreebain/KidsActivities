@@ -31,13 +31,15 @@ class ScavengerViewController: UIViewController {
         }
     }
     
-    private var selectedImage: UIImage? {
+    private var activityData = [ActivityData](){
         didSet{
             DispatchQueue.main.async {
-                self.addNewUserImage()
+                self.scavengerCollection.reloadData()
             }
         }
     }
+    
+//    private var selectedImage: UIImage?
     private var currentItem: ScavengerInfo?
     private var index = 0
     
@@ -47,11 +49,16 @@ class ScavengerViewController: UIViewController {
         print(scavInfo)
         setUpCollectionView()
         setUpNavItems()
+        fetchActivities()
     }
     
     private func setUpCollectionView() {
         scavengerCollection.delegate = self
         scavengerCollection.dataSource = self
+    }
+    
+    private func fetchActivities() {
+        activityData = CoreDataManager.shared.fetchMediaObjects()
     }
     
     private func setUpNavItems() {
@@ -69,23 +76,23 @@ class ScavengerViewController: UIViewController {
         present(imagePickerController, animated: true)
     }
     
-    private func addNewUserImage() {
-        guard let image = selectedImage else {
-                print("image is nil")
-                return
-        }
-
-        let size = UIScreen.main.bounds.size
-        
-        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
-        
-        let huntItem = ScavengerInfo(title: currentItem?.title ?? "title empty", image: image)
-        //add item into struct
-        
-        scavInfo[index] = huntItem
-        print(scavInfo)
-        scavengerCollection.reloadData()
-    }
+//    private func addNewUserImage() {
+//        guard let image = selectedImage else {
+//                print("image is nil")
+//                return
+//        }
+//
+//        let size = UIScreen.main.bounds.size
+//
+//        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
+//
+//        let huntItem = ScavengerInfo(title: currentItem?.title ?? "title empty", image: image)
+//        //add item into struct
+//
+//        scavInfo[index] = huntItem
+//        print(scavInfo)
+//        scavengerCollection.reloadData()
+//    }
     
 }
 
@@ -102,7 +109,7 @@ extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return scavengerItems.count
+        return scavInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,12 +117,8 @@ extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollect
             fatalError("could not downcast to scavCell")
         }
         
-        let huntItem = scavengerItems[indexPath.row]
-        if cell.image != huntItem.image {
-            cell.checkButton.isEnabled = true
-        } else {
-            cell.checkButton.isEnabled = false
-        }
+        let huntItem = scavInfo[indexPath.row]
+        print(activityData.count)
         
         cell.configureCell(for: huntItem)
         
@@ -127,19 +130,21 @@ extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollect
             present(imagePickerController, animated: true)
         currentItem = scavengerItems[indexPath.row]
         index = indexPath.row
+        
     }
 }
 
 extension ScavengerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-                   print("image selection not found")
-                   return
-               }
         
-        selectedImage = image
-        currentItem?.image = selectedImage
+        if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let imageData = originalImage.jpegData(compressionQuality: 1.0){
+            scavInfo[index].image = originalImage
+            let mediaObject = CoreDataManager.shared.create(imageData, videoURL: nil)
+            activityData.append(mediaObject)
+        }
+
+        
         dismiss(animated: true)
     }
     

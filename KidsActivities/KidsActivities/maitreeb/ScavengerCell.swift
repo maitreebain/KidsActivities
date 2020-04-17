@@ -17,6 +17,15 @@ class ScavengerCell: UICollectionViewCell {
     
     public func configureCell(for item: ScavengerInfo) {
         
+//        if image != item.image {
+//            checkButton.isEnabled = true
+//            if let imageData = activityImg?.imageData {
+//                image.image = UIImage(data: imageData)
+//            }
+//        } else {
+//            checkButton.isEnabled = false
+//            image.image = item.image
+//        }
         image.image = item.image
         prompt.text = item.title
     }
