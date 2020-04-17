@@ -1,7 +1,89 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nin-qA-zWJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="drawView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="DUK-Q4-t39" customClass="CanvasView" customModule="drawView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DUK-Q4-t39" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BZe-Hn-U0r"/>
+                            <constraint firstItem="DUK-Q4-t39" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Goh-AU-IVp"/>
+                            <constraint firstItem="DUK-Q4-t39" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="phe-p6-YRH"/>
+                            <constraint firstAttribute="bottom" secondItem="DUK-Q4-t39" secondAttribute="bottom" id="qRI-C4-sBH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MQB-pB-xB7">
+                        <rightBarButtonItems>
+                            <barButtonItem image="photo.fill" catalog="system" id="bc3-Ee-Z2W">
+                                <connections>
+                                    <action selector="selecPhoto:" destination="BYZ-38-t0r" id="z5l-Eu-mvp"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="clear.fill" catalog="system" id="Ogq-L5-6mj">
+                                <connections>
+                                    <action selector="clearAll:" destination="BYZ-38-t0r" id="ekJ-c8-4yk"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="camera.fill" catalog="system" id="1Fd-6b-yKD">
+                                <connections>
+                                    <action selector="cameraOpened:" destination="BYZ-38-t0r" id="ALf-pi-4Uj"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="star.fill" catalog="system" id="Eda-vF-9OM">
+                                <connections>
+                                    <action selector="screenshotPressed:" destination="BYZ-38-t0r" id="r2q-cc-rWg"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraButton" destination="1Fd-6b-yKD" id="5vs-Cc-lI8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2551" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o8G-g7-YOo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nin-qA-zWJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jnT-Sh-15K">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="y5p-0w-iSP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rsA-5p-TpR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221.7391304347827" y="123.88392857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
 </document>
