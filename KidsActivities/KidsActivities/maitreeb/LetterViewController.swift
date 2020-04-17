@@ -26,12 +26,6 @@ class LetterViewController: UIViewController {
     
     var index = 0
     
-//    private var selectedImage: UIImage? {
-//        didSet{
-//            addNewImage()
-//        }
-//    }
-    
     private lazy var imagePickerController: UIImagePickerController = {
         let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
         let pickerController = UIImagePickerController()
@@ -46,6 +40,7 @@ class LetterViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         letterView.letterTextView.delegate = self
         setUpNavItems()
+        configureCollectionView()
         fetchMediaObjects()
         updateUI()
     }
@@ -59,10 +54,12 @@ class LetterViewController: UIViewController {
     private func configureCollectionView() {
         letterView.lettCollectionView.delegate = self
         letterView.lettCollectionView.dataSource = self
+        letterView.lettCollectionView.register(LetterCell.self, forCellWithReuseIdentifier: "letterCell")
     }
     
     private func updateUI() {
-        if let image = letters[index].imageData {
+        guard let current = letters.last else { return }
+        if let image = current.imageData {
             letterView.letterImageView.image = UIImage(data: image)
         }
     }
@@ -91,25 +88,6 @@ class LetterViewController: UIViewController {
         letters = CoreDataManager.shared.fetchMediaObjects()
     }
     
-//    private func addNewImage() {
-//        guard let image = selectedImage else {
-//            print("image is nil")
-//            return
-//        }
-//        let size = UIScreen.main.bounds.size
-//        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
-//        let resizeImage = image.resizeImage(to: rect.size.width, height: rect.size.height)
-//
-//        print("resized: \(resizeImage.size)")
-//
-//        guard let resizedImageData = resizeImage.jpegData(compressionQuality: 1.0) else {
-//            return
-//        }
-//
-//        let letterItem = LetterObject(letter: letterView.letterTextView.text, image: selectedImage)
-//
-//
-//    }
 }
 
 extension LetterViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -132,20 +110,26 @@ extension LetterViewController: UICollectionViewDelegateFlowLayout, UICollection
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "letterCell", for: indexPath) as? LetterCell else {
             fatalError("could not downcast to LetterCell")
         }
+        let letter = letters[indexPath.row]
+        cell.configureCell(letter)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let playerController = AVPlayerViewController()
-        let letter = letters[indexPath.row]
-        guard let videoURL = letter.videoData?.convertToURL() else { return}
-        let player = AVPlayer(url: videoURL)
-        playerController.player = player
-        present(playerController, animated: true) {
-            player.play()
-        }
+        //move this to when image is interactable
+//        let playerController = AVPlayerViewController()
+//        let letter = letters[indexPath.row]
+//        guard let videoURL = letter.videoData?.convertToURL() else { return}
+//        let player = AVPlayer(url: videoURL)
+//        playerController.player = player
+//        present(playerController, animated: true) {
+//            player.play()
+//        }
         index = indexPath.row
+        if let image = letters[index].imageData {
+            letterView.letterImageView.image = UIImage(data: image)
+        }
     }
     
     
