@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class ScavengerViewController: UIViewController {
     
@@ -25,6 +27,13 @@ class ScavengerViewController: UIViewController {
             scavengerCollection.reloadData()
         }
     }
+    
+    private var selectedImage: UIImage? {
+        didSet{
+            addNewUserImage()
+        }
+    }
+    private var currentItem: ScavengerInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +62,21 @@ class ScavengerViewController: UIViewController {
         present(imagePickerController, animated: true)
     }
     
+    private func addNewUserImage() {
+        guard let image = selectedImage else {
+                print("image is nil")
+                return
+        }
+
+        let size = UIScreen.main.bounds.size
+        
+        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
+        
+        let huntItem = ScavengerInfo(title: currentItem?.title ?? "title empty", image: image)
+        //add item into struct
+    }
+    
+    
 }
 
 extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
@@ -77,7 +101,7 @@ extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollect
         }
         
         let huntItem = scavengerItems[indexPath.row]
-        
+        currentItem = huntItem
         if cell.image != huntItem.image {
             cell.checkButton.isEnabled = true
         } else {
@@ -90,36 +114,22 @@ extension ScavengerViewController: UICollectionViewDelegateFlowLayout, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if !UIImagePickerController.isSourceTypeAvailable(.camera){
             imagePickerController.sourceType = .photoLibrary
             present(imagePickerController, animated: true)
-        } else {
-            imagePickerController.sourceType = .camera
-            present(imagePickerController, animated: true)
-        }
     }
 }
 
 extension ScavengerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String else  {
-            return
-        }
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+                   print("image selection not found")
+                   return
+               }
         
-        switch mediaType {
-        case "public.image":
-            //do core data here
-            //            if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let imageData = originalImage.jpegData(compressionQuality: 1.0){
-            //            }
-            print("save image")
-        case "public.video":
-            print("save video")
-        default:
-            print("unsupported media type")
-        }
-        
-        
+        selectedImage = image
+        currentItem?.image = selectedImage
+        dismiss(animated: true)
     }
     
     

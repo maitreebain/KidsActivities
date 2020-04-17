@@ -33,6 +33,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="165" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cjL-Ng-dhS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="142"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcV-Wt-OKs">
                                                     <rect key="frame" x="137" y="8" width="20" height="22"/>
                                                     <color key="backgroundColor" red="0.62651407169999995" green="0.74407122459999997" blue="0.62768834220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -48,9 +51,6 @@
                                                     <color key="textColor" red="0.56901086568602532" green="0.2826300752375856" blue="0.70837960025380708" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cjL-Ng-dhS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="142"/>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="cjL-Ng-dhS" secondAttribute="trailing" id="42k-nl-06k"/>

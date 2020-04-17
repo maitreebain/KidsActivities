@@ -10,12 +10,20 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class ViewController: UIViewController {
+class LetterViewController: UIViewController {
     
     private let letterView = View()
     
     override func loadView() {
         view = letterView
+    }
+    
+    let letters = [LetterObject]()
+    
+    private var selectedImage: UIImage? {
+        didSet{
+            addNewImage()
+        }
     }
     
     private lazy var imagePickerController: UIImagePickerController = {
@@ -59,9 +67,28 @@ class ViewController: UIViewController {
         present(alertController, animated: true)
     }
     
+    private func addNewImage() {
+        guard let image = selectedImage else {
+            print("image is nil")
+            return
+        }
+        let size = UIScreen.main.bounds.size
+        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
+        let resizeImage = image.resizeImage(to: rect.size.width, height: rect.size.height)
+        
+        print("resized: \(resizeImage.size)")
+        
+        guard let resizedImageData = resizeImage.jpegData(compressionQuality: 1.0) else {
+            return
+        }
+        
+        let letterItem = LetterObject(letter: letterView.letterTextView.text, image: selectedImage)
+        
+        
+    }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension LetterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String else  {
@@ -80,7 +107,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
 }
 
-extension ViewController: UITextViewDelegate {
+extension LetterViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == "Type your letter here" {
             textView.text = ""
@@ -89,5 +116,15 @@ extension ViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         textView.resignFirstResponder()
+    }
+}
+
+extension UIImage {
+    func resizeImage(to width: CGFloat, height: CGFloat) -> UIImage {
+        let size = CGSize(width: width, height: height)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { (context) in
+            self.draw(in: CGRect(origin: .zero, size: size))
+        }
     }
 }

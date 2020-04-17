@@ -29,6 +29,8 @@ class OptionsViewController: UIViewController {
     }
     
     @IBAction func activity17(_ sender: UIButton) {
+        let letterVC = LetterViewController()
+        self.navigationController?.pushViewController(letterVC, animated: true)
     }
     
     @IBAction func activity20(_ sender: UIButton) {

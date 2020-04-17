@@ -24,6 +24,7 @@
 		80CB497E2448C0C900E07A76 /* ScavengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB497D2448C0C800E07A76 /* ScavengerViewController.swift */; };
 		80CB49802448C0D100E07A76 /* Scavenger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CB497F2448C0D100E07A76 /* Scavenger.storyboard */; };
 		80CB49822448C41500E07A76 /* ScavengerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB49812448C41500E07A76 /* ScavengerInfo.swift */; };
+		80F55809244922AE009B7BFB /* LetterObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F55808244922AE009B7BFB /* LetterObject.swift */; };
 		A3D6E7C86F4BA7CEF27853CD /* Pods_KidsActivities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D893B9D67FC1BD5F6AA955 /* Pods_KidsActivities.framework */; };
 		B732F484820E971BEBCCFACE /* Pods_KidsActivitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917AF7A5682482C425D140F7 /* Pods_KidsActivitiesTests.framework */; };
 		F106A2E72447936400FAB35F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F106A2E62447936400FAB35F /* GoogleService-Info.plist */; };
@@ -72,6 +73,7 @@
 		80CB497D2448C0C800E07A76 /* ScavengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerViewController.swift; sourceTree = "<group>"; };
 		80CB497F2448C0D100E07A76 /* Scavenger.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Scavenger.storyboard; sourceTree = "<group>"; };
 		80CB49812448C41500E07A76 /* ScavengerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScavengerInfo.swift; sourceTree = "<group>"; };
+		80F55808244922AE009B7BFB /* LetterObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterObject.swift; sourceTree = "<group>"; };
 		917AF7A5682482C425D140F7 /* Pods_KidsActivitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D893B9D67FC1BD5F6AA955 /* Pods_KidsActivities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F106A2E62447936400FAB35F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				8020BCDA2446A8C9009FC0A9 /* LetterViewController.swift */,
+				80F55808244922AE009B7BFB /* LetterObject.swift */,
 				808C23FE2447733D00C3EC8D /* LetterView.swift */,
 				80CB497D2448C0C800E07A76 /* ScavengerViewController.swift */,
 				80CB49812448C41500E07A76 /* ScavengerInfo.swift */,
@@ -382,6 +385,7 @@
 			files = (
 				80CA68E8244661AC0097BB7D /* OptionsViewController.swift in Sources */,
 				F106A2F12448A0A900FAB35F /* ContentCell.swift in Sources */,
+				80F55809244922AE009B7BFB /* LetterObject.swift in Sources */,
 				80CA68E4244661AC0097BB7D /* AppDelegate.swift in Sources */,
 				80CA68E6244661AC0097BB7D /* SceneDelegate.swift in Sources */,
 				80CA690D2446695B0097BB7D /* TabViewController.swift in Sources */,

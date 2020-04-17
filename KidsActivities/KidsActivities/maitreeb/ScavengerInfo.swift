@@ -10,7 +10,7 @@ import UIKit
 
 struct ScavengerInfo {
     let title: String
-    let image: UIImage?
+    var image: UIImage?
 }
 
 let scavengerItems = [
